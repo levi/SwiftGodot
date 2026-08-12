@@ -21,7 +21,7 @@ public class EditorInterop {
     /// Adds the Godot XML documentation to the editor at runtime
     public static func loadHelp(xmlString: String) {
         GD.print("Loading from \(getLibraryPath())")
-        if #available(iOS 26.0, macOS 26.0, *) {
+        if #available(iOS 26.0, macOS 26.0, tvOS 26.0, *) {
             let span = xmlString.utf8Span
             span.span.withUnsafeBytes { buffer in
                 // Bind to CChar (Int8) because the imported symbol expects CChar*
